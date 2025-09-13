@@ -6,9 +6,11 @@ use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 use App\Livewire\ToDo;
+use App\Livewire\Tables;
 
 Route::get("Counter", Counter::class);
 Route::get("ToDo", Todo::class);
+Route::get("users", Tables::class);
 
 Route::get('/', function () {
     return view('welcome');
