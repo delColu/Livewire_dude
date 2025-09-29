@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 use App\Livewire\ToDo;
 use App\Livewire\Tables;
+use App\Livewire\PostTable;
 
 Route::get("Counter", Counter::class);
 Route::get("ToDo", Todo::class);
 Route::get("users", Tables::class);
+Route::get("post-table", PostTable::class);
 
 Route::get('/', function () {
     return view('welcome');
