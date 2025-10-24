@@ -8,11 +8,15 @@ use App\Livewire\Counter;
 use App\Livewire\ToDo;
 use App\Livewire\Tables;
 use App\Livewire\PostTable;
+use App\Livewire\UserForm;
+
 
 Route::get("Counter", Counter::class);
 Route::get("ToDo", Todo::class);
 Route::get("users", Tables::class);
-Route::get("post-table", PostTable::class);
+Route::get("posts", PostTable::class);
+Route::get('user-form', UserForm::class)->name('user.form');
+
 
 Route::get('/', function () {
     return view('welcome');

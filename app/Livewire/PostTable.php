@@ -18,7 +18,7 @@ class PostTable extends Component
     public function render()
     {
         // Pass $posts to the view explicitly or access it directly in the view
-        return view('livewire.post-table', [
+        return view('livewire.posts.post-table', [
             'posts' => $this->posts,
         ]);
     }

@@ -10,6 +10,7 @@ class Tables extends Component
 
     public $users;  // Declare the property here
 
+
     public function mount()
     {
         $this->users = User::take(20)->get();
