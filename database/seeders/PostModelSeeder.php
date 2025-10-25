@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\PostModel;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class PostModelSeeder extends Seeder
@@ -12,6 +13,13 @@ class PostModelSeeder extends Seeder
      */
     public function run(): void
     {
-        PostModel::factory()->count(10)->create();
+        $userIds = User::pluck('id')->toArray();
+
+        // Create 50 random posts
+        \App\Models\PostModel::factory()->count(5)->create([
+            'user_id' => function () use ($userIds) {
+                return $userIds[array_rand($userIds)]; // pick random user id
+            },
+        ]);
     }
 }

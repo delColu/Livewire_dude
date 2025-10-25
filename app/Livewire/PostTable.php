@@ -15,6 +15,8 @@ class PostTable extends Component
         $this->posts = PostModel::take(20)->get();
     }
 
+    
+
     public function render()
     {
         // Pass $posts to the view explicitly or access it directly in the view

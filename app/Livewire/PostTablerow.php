@@ -14,8 +14,12 @@ class PostTablerow extends Component
     public function unarchive(){
         $this->post->update(['is_archived' => false]);
     }
+    public function delete()
+    {
+        $this->post->delete();
+    }
     public function render()
     {
-        return view('livewire.post-tablerow');
+        return view('livewire.posts.post-tablerow');
     }
 }

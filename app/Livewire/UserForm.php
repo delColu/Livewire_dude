@@ -8,9 +8,23 @@ use Illuminate\Support\Facades\Hash;
 
 class UserForm extends Component
 {
-    public $name;
-    public $email;
-    public $password;
+    public $email = '';
+    public $name = '';
+    public $password = '';
+
+
+    protected $rules = [
+        'email' => 'required|email|unique:users,email',
+        'name' => 'required|min:3|unique:users,name',
+        'password' => 'required|min:8',
+    ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+
 
     public function save()
     {

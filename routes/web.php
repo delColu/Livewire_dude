@@ -9,6 +9,7 @@ use App\Livewire\ToDo;
 use App\Livewire\Tables;
 use App\Livewire\PostTable;
 use App\Livewire\UserForm;
+use App\Livewire\Postform;
 
 
 Route::get("Counter", Counter::class);
@@ -16,6 +17,7 @@ Route::get("ToDo", Todo::class);
 Route::get("users", Tables::class);
 Route::get("posts", PostTable::class);
 Route::get('user-form', UserForm::class)->name('user.form');
+Route::get('postform', PostForm::class)->name('post.form');
 
 
 Route::get('/', function () {
